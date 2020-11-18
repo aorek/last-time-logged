@@ -2,8 +2,15 @@ import React from "react"
 
 import { requireAuth } from "utils/requireAuth"
 import Timer from "componets/timer"
+import useSession from "hooks/useSession"
 
 function HomePage() {
+  const { logout } = useSession()
+
+  const handleLogout = () => {
+    logout()
+  }
+
   return (
     <div className="container">
       <h1>Welcome!</h1>
@@ -11,7 +18,9 @@ function HomePage() {
 
       <Timer />
 
-      <button className="btn btn-primary btn-sm m-6">LOGOUT</button>
+      <button className="btn btn-primary btn-sm m-6" onClick={handleLogout}>
+        LOGOUT
+      </button>
     </div>
   )
 }
