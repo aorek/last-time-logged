@@ -2,11 +2,11 @@ import React from "react"
 
 import Time from "componets/time"
 
-import "./timer.css"
+import style from "./timer.module.css"
 
 export default function Timer() {
   return (
-    <div className="timer">
+    <div className={style.timer}>
       <Time label="days" />
       <Time label="hours" />
       <Time label="minutes" />
