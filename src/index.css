@@ -36,7 +36,7 @@ code {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  margin: 0 95%;
+  margin: 20px 95%;
   text-align: center;
   width: 100%;
 }
@@ -45,6 +45,12 @@ code {
   font-size: 50px;
   font-weight: 500;
   margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .timer {
+    width: 768px;
+  }
 }
 
 /* Button */
@@ -62,7 +68,7 @@ code {
 }
 
 .btn-sm {
-  width: 50%;
+  width: 200px;
 }
 
 .btn-primary:hover {
