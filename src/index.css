@@ -38,6 +38,12 @@ form {
   width: 70%;
 }
 
+@media screen and (min-width: 450px) {
+  form {
+    width: 300px;
+  }
+}
+
 /* Button */
 .btn {
   border-radius: 5px;

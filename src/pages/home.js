@@ -1,8 +1,9 @@
 import React from "react"
 
+import { requireAuth } from "utils/requireAuth"
 import Timer from "componets/timer"
 
-export default function HomePage() {
+function HomePage() {
   return (
     <div className="container">
       <h1>Welcome!</h1>
@@ -14,3 +15,5 @@ export default function HomePage() {
     </div>
   )
 }
+
+export default requireAuth(HomePage)
