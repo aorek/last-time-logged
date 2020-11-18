@@ -1,0 +1,38 @@
+.form-group {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form-group > label {
+  color: #5e5d5d;
+  display: block;
+  font-size: 16px;
+  pointer-events: none;
+  position: absolute;
+  transition: 0.3s ease all;
+  top: 20px;
+}
+
+.form-group > input:focus ~ label,
+.input-has-value {
+  font-size: 12px !important;
+  top: 0 !important;
+}
+
+.form-group input {
+  background: none;
+  border: none;
+  border-bottom: solid 2px rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  padding: 20px 0px 10px 0px;
+  width: 100%;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.form-group:hover::after {
+  background-color: rgba(131, 40, 40, 0.3);
+}
