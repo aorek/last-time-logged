@@ -1,0 +1,15 @@
+.timer {
+  color: #7d8286;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  margin: 20px 95%;
+  text-align: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .timer {
+    width: 768px;
+  }
+}

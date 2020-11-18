@@ -2,6 +2,8 @@ import React from "react"
 
 import Time from "componets/time"
 
+import "./timer.css"
+
 export default function Timer() {
   return (
     <div className="timer">
