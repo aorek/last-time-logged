@@ -28,27 +28,29 @@ export default class Server {
   }
 
   login = ({ email, password }) => {
-    const user = this.getUser(email)
+    return new Promise(resolve => {
+      const user = this.getUser(email)
 
-    if (!user || !bcrypt.compareSync(password, user.password)) {
-      throw new Error("User or password incorrect")
-    }
-    const now = new Date(Date.now())
-    /* if (!user.lastLogin) */ user.lastLogin = now
+      if (!user || !bcrypt.compareSync(password, user.password)) {
+        throw new Error("User or password incorrect")
+      }
+      const now = new Date(Date.now())
+      /* if (!user.lastLogin) */ user.lastLogin = now
 
-    // Update user lastLogin in db
-    this.setUser({ ...user, lastLogin: now })
+      // Update user lastLogin in db
+      this.setUser({ ...user, lastLogin: now })
 
-    delete user.password
-    const token = jwt.sign(
-      {
-        data: user,
-      },
-      config.TOKEN_SEED,
-      { expiresIn: config.TOKEN_EXPIRE, noTimestamp: true }
-    )
+      delete user.password
+      const token = jwt.sign(
+        {
+          data: user,
+        },
+        config.TOKEN_SEED,
+        { expiresIn: config.TOKEN_EXPIRE, noTimestamp: true }
+      )
 
-    return new Promise(resolve => setTimeout(resolve({ user, token }), 1000))
+      return setTimeout(resolve({ user, token }), 1000)
+    })
   }
 
   getData = () => {

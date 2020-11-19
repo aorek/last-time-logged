@@ -8,10 +8,16 @@ export default function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  const { login } = useSession()
+  const { error, login, setError } = useSession()
 
   const handleSubmit = e => {
     e.preventDefault()
+
+    if (!email || !password) {
+      setError(new Error("Email or password are empty"))
+      return
+    }
+
     login({ email, password })
   }
 
@@ -35,6 +41,10 @@ export default function Login() {
           />
 
           <button className="btn btn-primary mt-2">LOG IN</button>
+
+          {error && (
+            <div className="alert alert-outline-danger">{error.message}</div>
+          )}
         </form>
       </div>
     </div>

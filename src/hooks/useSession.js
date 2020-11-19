@@ -33,6 +33,7 @@ export default function useSession() {
     isLogged: Boolean(token),
     user,
     error,
+    setError,
     login,
     logout,
   }
