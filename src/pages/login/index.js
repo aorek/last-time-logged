@@ -31,19 +31,23 @@ export default function Login() {
             type="email"
             labelValue="Username"
             value={email}
+            role="email"
             onChange={setEmail}
           />
           <InputFormGroup
             type="password"
             labelValue="Password"
             value={password}
+            role="password"
             onChange={setPassword}
           />
 
           <button className="btn btn-primary mt-2">LOG IN</button>
 
           {error && (
-            <div className="alert alert-outline-danger">{error.message}</div>
+            <div role="alert" className="alert alert-outline-danger">
+              {error.message}
+            </div>
           )}
         </form>
       </div>
