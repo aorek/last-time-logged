@@ -11,6 +11,8 @@ export default function loginService(data) {
     throw new Error("User or password incorrect")
   }
 
+  delete user.password
+
   const token = jwt.sign(
     {
       data: user,
