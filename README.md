@@ -1,4 +1,4 @@
-# Last time logged
+# [Last time logged](https://last-time-logged.vercel.app/login)
 
 Simple app to know the time since the last log in.
 
