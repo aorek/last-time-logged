@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken"
 
 import { user as jsonData } from "./user.json"
 
-const config = {
+export const config = {
   TOKEN_SEED: "TOKEN_SEED_REPLACE_IT",
   TOKEN_EXPIRE: "10d",
 }
@@ -34,7 +34,7 @@ export default class Server {
       throw new Error("User or password incorrect")
     }
     const now = new Date(Date.now())
-    if (!user.lastLogin) user.lastLogin = now
+    /* if (!user.lastLogin) */ user.lastLogin = now
 
     // Update user lastLogin in db
     this.setUser({ ...user, lastLogin: now })

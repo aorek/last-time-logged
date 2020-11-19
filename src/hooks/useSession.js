@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken"
 import { useState } from "react"
 import { useLocation } from "wouter"
 
-import { config } from "config"
+import { config } from "backend"
 import loginService from "services/login"
 
 export default function useSession() {
