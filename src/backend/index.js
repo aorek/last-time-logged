@@ -48,7 +48,7 @@ export default class Server {
       { expiresIn: config.TOKEN_EXPIRE, noTimestamp: true }
     )
 
-    return { user, token }
+    return new Promise(resolve => setTimeout(resolve({ user, token }), 1000))
   }
 
   getData = () => {

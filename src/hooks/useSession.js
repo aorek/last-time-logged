@@ -12,16 +12,16 @@ export default function useSession() {
   const [, navigate] = useLocation()
 
   const login = data => {
-    try {
-      const { user, token } = loginService(data)
+    loginService(data)
+      .then(({ user, token }) => {
+        setUser(user)
+        setToken(token)
 
-      setUser(user)
-      setToken(token)
-
-      navigate("home")
-    } catch (error) {
-      setError(error)
-    }
+        navigate("home")
+      })
+      .catch(e => {
+        setError(e)
+      })
   }
 
   const logout = () => {
