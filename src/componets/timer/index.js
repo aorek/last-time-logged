@@ -43,7 +43,7 @@ export default function Timer() {
   }, [calculateTimeLeft, days, hours, minutes, seconds])
 
   return (
-    <div className={style.timer}>
+    <div className={style.timer} role="timer">
       <Time label="days" time={days} />
       <Time label="hours" time={hours} />
       <Time label="minutes" time={minutes} />
