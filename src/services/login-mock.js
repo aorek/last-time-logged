@@ -11,6 +11,7 @@ export default function loginService(data) {
     throw new Error("User or password incorrect")
   }
 
+  user.lastLogin = new Date(Date.now())
   delete user.password
 
   const token = jwt.sign(
