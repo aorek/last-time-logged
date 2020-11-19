@@ -13,14 +13,16 @@ function HomePage() {
 
   return (
     <div className="container">
-      <h1>Welcome!</h1>
-      <h5 className="subtitle mt--1">The last time you accessed was</h5>
+      <div className="device">
+        <h1>Welcome!</h1>
+        <h5 className="subtitle mt--1">The last time you accessed was</h5>
 
-      <Timer />
+        <Timer />
 
-      <button className="btn btn-primary btn-sm m-6" onClick={handleLogout}>
-        LOGOUT
-      </button>
+        <button className="btn btn-primary btn-sm m-6" onClick={handleLogout}>
+          LOGOUT
+        </button>
+      </div>
     </div>
   )
 }

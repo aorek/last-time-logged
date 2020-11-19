@@ -17,24 +17,26 @@ export default function Login() {
 
   return (
     <div className="container">
-      <Lock height="150px" />
+      <div className="device">
+        <Lock height="150px" />
 
-      <form onSubmit={handleSubmit}>
-        <InputFormGroup
-          type="email"
-          labelValue="Username"
-          value={email}
-          onChange={setEmail}
-        />
-        <InputFormGroup
-          type="password"
-          labelValue="Password"
-          value={password}
-          onChange={setPassword}
-        />
+        <form onSubmit={handleSubmit}>
+          <InputFormGroup
+            type="email"
+            labelValue="Username"
+            value={email}
+            onChange={setEmail}
+          />
+          <InputFormGroup
+            type="password"
+            labelValue="Password"
+            value={password}
+            onChange={setPassword}
+          />
 
-        <button className="btn btn-primary mt-2">LOG IN</button>
-      </form>
+          <button className="btn btn-primary mt-2">LOG IN</button>
+        </form>
+      </div>
     </div>
   )
 }
