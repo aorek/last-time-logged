@@ -13,16 +13,22 @@ export default function Timer() {
   const [seconds, setSeconds] = useState("00")
 
   const calculateTimeLeft = useCallback(() => {
-    const now = new Date().getTime()
-    const countDownDate = new Date(user.lastLogin).getTime()
+    if (user) {
+      const { lastLogin } = user
 
-    const distance = Math.abs(countDownDate - now)
+      const now = new Date().getTime()
+      const countDownDate = new Date(lastLogin).getTime()
 
-    setDays(Math.floor(distance / (1000 * 60 * 60 * 24)))
-    setHours(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)))
-    setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)))
-    setSeconds(Math.floor((distance % (1000 * 60)) / 1000))
-  }, [user.lastLogin])
+      const distance = Math.abs(countDownDate - now)
+
+      setDays(Math.floor(distance / (1000 * 60 * 60 * 24)))
+      setHours(
+        Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      )
+      setMinutes(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)))
+      setSeconds(Math.floor((distance % (1000 * 60)) / 1000))
+    }
+  }, [user])
 
   useEffect(() => {
     calculateTimeLeft()
