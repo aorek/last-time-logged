@@ -3,21 +3,25 @@ import { useState } from "react"
 import { useLocation } from "wouter"
 
 import { config } from "config"
-import loginService from "services/login-mock"
+import loginService from "services/login"
 
 export default function useSession() {
   const [user, setUser] = useState(getUserFromLocalStorage())
   const [token, setToken] = useState(localStorage.getItem("token"))
+  const [error, setError] = useState(null)
   const [, navigate] = useLocation()
 
   const login = data => {
-    const { user, token } = loginService(data)
+    try {
+      const { user, token } = loginService(data)
 
-    setUser(user)
-    setToken(token)
+      setUser(user)
+      setToken(token)
 
-    localStorage.setItem("token", token)
-    navigate("home")
+      navigate("home")
+    } catch (error) {
+      setError(error)
+    }
   }
 
   const logout = () => {
@@ -28,6 +32,7 @@ export default function useSession() {
   return {
     isLogged: Boolean(token),
     user,
+    error,
     login,
     logout,
   }

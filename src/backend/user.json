@@ -4,25 +4,25 @@
       "id": 1,
       "email": "test1@test.com",
       "password": "$2a$10$.GigC1TbGhD/42R3Lka7GO9X0idZmx3pF1681aflBjutaecgwPnqi",
-      "lastLogin": "2020-11-18T18:35:25.472Z"
+      "lastLogin": ""
     },
     {
       "id": 2,
       "email": "test2@test.com",
       "password": "$2a$10$.GigC1TbGhD/42R3Lka7GO9X0idZmx3pF1681aflBjutaecgwPnqi",
-      "lastLogin": "2020-11-18T22:49:49.548Z"
+      "lastLogin": ""
     },
     {
       "id": 3,
       "email": "test3@test.com",
       "password": "$2a$10$.GigC1TbGhD/42R3Lka7GO9X0idZmx3pF1681aflBjutaecgwPnqi",
-      "lastLogin": "2020-11-18T22:49:49.548Z"
+      "lastLogin": ""
     },
     {
       "id": 4,
       "email": "test4@test.com",
       "password": "$2a$10$.GigC1TbGhD/42R3Lka7GO9X0idZmx3pF1681aflBjutaecgwPnqi",
-      "lastLogin": "2020-11-18T22:49:49.548Z"
+      "lastLogin": ""
     }
   ]
 }
