@@ -37,7 +37,8 @@ const getUserFromLocalStorage = () => {
   const token = localStorage.getItem("token")
 
   if (token) {
-    return jwt.verify(token, config.TOKEN_SEED)
+    const { data } = jwt.verify(token, config.TOKEN_SEED)
+    return data
   }
 
   return undefined
